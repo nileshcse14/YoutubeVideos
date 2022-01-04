@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "816437DB-86B8-4E3A-8422-245402CF480C"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E60D5ED-593F-45BE-903F-90279E33FA20"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ApiCallSwiftUI/CommentService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getComments(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3C36111-BA77-48E0-9866-3EF9DC444FD2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ApiCallSwiftUI/CommentService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getComments(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
