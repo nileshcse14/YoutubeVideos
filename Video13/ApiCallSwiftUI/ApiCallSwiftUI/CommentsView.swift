@@ -9,11 +9,12 @@ import SwiftUI
 
 struct CommentsView: View {
     @ObservedObject private var viewModel = CommentViewModel()
+    @State private var searchText: String = ""
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(viewModel.comments) { comment in
+                    ForEach(viewModel.searchResultComments) { comment in
                         NavigationLink {
                            DetailCommentView(commentModel: comment)
                         } label: {
@@ -21,7 +22,15 @@ struct CommentsView: View {
                         }
 
                     }
-                }
+                }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+                    .onChange(of: searchText) { newValue in
+                        print(newValue)
+                        viewModel.didGetSearchText(text: newValue)
+                    }
+                    .refreshable {
+                        print("Refreshed")
+                        viewModel.fetchComments()
+                    }
             }.onAppear {
                 viewModel.fetchComments()
             }
