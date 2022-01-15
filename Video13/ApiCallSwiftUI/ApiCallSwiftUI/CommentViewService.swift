@@ -6,15 +6,29 @@
 //
 
 import Foundation
-
-protocol CommentViewServiceDelegate {
-    func getComments(completion: @escaping(Result<[CommentModel], NetworkError>) -> Void)
+enum DemoError: Error {
+    case BadURL
+    case NoData
+    case DecodingError
 }
 
-class CommentViewService: CommentViewServiceDelegate  {
+class CommentViewService  {
     
-    func getComments(completion: @escaping(Result<[CommentModel], NetworkError>) -> Void) {
-        RestAPIClient.getComments(completion: completion)
+    func getComments(completion: @escaping(Result<[CommentModel]?, DemoError>) -> Void) {
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/comments") else {
+            return completion(.failure(.BadURL))
+        }
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                return completion(.failure(.NoData))
+            }
+            let commentResponse = try? JSONDecoder().decode([CommentModel].self, from: data)
+            if let commentResponse = commentResponse {
+                return completion(.success(commentResponse))
+            } else {
+                completion(.failure(.DecodingError))
+            }
+        }.resume()
     }
     
     

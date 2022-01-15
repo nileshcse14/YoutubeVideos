@@ -14,23 +14,15 @@ struct CommentsView: View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(viewModel.searchResultComments) { comment in
+                    ForEach(viewModel.comments) { comment in
                         NavigationLink {
-                           DetailCommentView(commentModel: comment)
+                            DetailCommentView(commentModel: comment)
                         } label: {
                             CommentRow(commentModel: comment)
                         }
-
+                        
                     }
-                }.searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
-                    .onChange(of: searchText) { newValue in
-                        print(newValue)
-                        viewModel.didGetSearchText(text: newValue)
-                    }
-                    .refreshable {
-                        print("Refreshed")
-                        viewModel.fetchComments()
-                    }
+                }
             }.onAppear {
                 viewModel.fetchComments()
             }
