@@ -65,11 +65,11 @@ class APIHandler: APIHandlerDelegate {
 }
 
 protocol ResponseHandlerDelegate {
-    func fetchModel<T: Codable>(type: T.Type, data: Data, completion: @escaping(Result<T, DemoError>) -> Void)
+    func fetchModel<T: Codable>(type: T.Type, data: Data, completion: (Result<T, DemoError>) -> Void)
 }
 
 class ResponseHandler: ResponseHandlerDelegate {
-    func fetchModel<T: Codable>(type: T.Type, data: Data, completion: @escaping(Result<T, DemoError>) -> Void) {
+    func fetchModel<T: Codable>(type: T.Type, data: Data, completion: (Result<T, DemoError>) -> Void) {
         let commentResponse = try? JSONDecoder().decode(type.self, from: data)
         if let commentResponse = commentResponse {
             return completion(.success(commentResponse))
