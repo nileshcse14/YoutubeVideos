@@ -78,10 +78,10 @@
 			isa = PBXGroup;
 			children = (
 				0D87FAFC2783B2F300511E02 /* ApiCallSwiftUIApp.swift */,
+				0D87FAFE2783B2F300511E02 /* CommentsView.swift */,
 				0D87FB002783B2F700511E02 /* Assets.xcassets */,
 				0D87FB022783B2F700511E02 /* Preview Content */,
 				0DFAA14C2784570500977B0F /* Comments.json */,
-				0D87FAFE2783B2F300511E02 /* CommentsView.swift */,
 				0DFAA14E27849F1A00977B0F /* CommentModel.swift */,
 				0DFAA15027849FBC00977B0F /* CommentViewModel.swift */,
 				0DFAA1522784A02900977B0F /* CommentViewService.swift */,

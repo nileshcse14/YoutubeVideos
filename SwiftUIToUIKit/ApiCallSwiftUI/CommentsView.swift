@@ -38,16 +38,17 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-
 struct CommentDetailViewControllerRepresentable: UIViewControllerRepresentable {
     var commentModel: CommentModel
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        
+    }
+    
     func makeUIViewController(context: Context) -> some UIViewController {
         let viewModel = CommentDetailViewModel(comment: commentModel)
         let vc = CommentDetailViewController(viewModel: viewModel)
         return vc
     }
     
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        
-    }
+    
 }
