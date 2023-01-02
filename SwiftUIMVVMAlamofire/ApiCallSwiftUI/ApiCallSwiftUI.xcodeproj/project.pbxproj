@@ -46,12 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D2C136929623DE700B4027C /* CommentRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentRow.swift; path = ApiCallSwiftUI/CommentRow.swift; sourceTree = SOURCE_ROOT; };
-		0D2C136A29623DE700B4027C /* CommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentViewModel.swift; path = ApiCallSwiftUI/CommentViewModel.swift; sourceTree = SOURCE_ROOT; };
-		0D2C136B29623DE700B4027C /* CommentViewService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentViewService.swift; path = ApiCallSwiftUI/CommentViewService.swift; sourceTree = SOURCE_ROOT; };
+		0D2C136929623DE700B4027C /* CommentRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentRow.swift; path = ApiCallSwiftUI/CommentList/View/CommentRow.swift; sourceTree = SOURCE_ROOT; };
+		0D2C136A29623DE700B4027C /* CommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentViewModel.swift; path = ApiCallSwiftUI/CommentList/ViewModel/CommentViewModel.swift; sourceTree = SOURCE_ROOT; };
+		0D2C136B29623DE700B4027C /* CommentViewService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentViewService.swift; path = ApiCallSwiftUI/CommentList/Service/CommentViewService.swift; sourceTree = SOURCE_ROOT; };
 		0D2C136C29623DE700B4027C /* DetailCommentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailCommentView.swift; path = ApiCallSwiftUI/DetailCommentView.swift; sourceTree = SOURCE_ROOT; };
 		0D2C136D29623DE700B4027C /* CommentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentModel.swift; path = ApiCallSwiftUI/CommentModel.swift; sourceTree = SOURCE_ROOT; };
-		0D2C136E29623DE700B4027C /* CommentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentsView.swift; path = ApiCallSwiftUI/CommentsView.swift; sourceTree = SOURCE_ROOT; };
+		0D2C136E29623DE700B4027C /* CommentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommentsView.swift; path = ApiCallSwiftUI/CommentList/View/CommentsView.swift; sourceTree = SOURCE_ROOT; };
 		0D3BF1B02787136B006B3C3E /* ApiCallSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiCallSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D3BF1B32787136B006B3C3E /* ApiCallSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCallSwiftUIApp.swift; sourceTree = "<group>"; };
 		0D3BF1B72787136D006B3C3E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +94,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D2C137529623F9300B4027C /* CommentList */ = {
+			isa = PBXGroup;
+			children = (
+				0D2C137829623FD600B4027C /* Service */,
+				0D2C137729623FC800B4027C /* ViewModel */,
+				0D2C137629623FB100B4027C /* View */,
+			);
+			path = CommentList;
+			sourceTree = "<group>";
+		};
+		0D2C137629623FB100B4027C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0D2C136929623DE700B4027C /* CommentRow.swift */,
+				0D2C136E29623DE700B4027C /* CommentsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0D2C137729623FC800B4027C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0D2C136A29623DE700B4027C /* CommentViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0D2C137829623FD600B4027C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0D2C136B29623DE700B4027C /* CommentViewService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		0D3BF1A72787136B006B3C3E = {
 			isa = PBXGroup;
 			children = (
@@ -120,10 +155,7 @@
 				0D3BF1EC27871A47006B3C3E /* Network */,
 				0D3BF1B32787136B006B3C3E /* ApiCallSwiftUIApp.swift */,
 				0D2C136D29623DE700B4027C /* CommentModel.swift */,
-				0D2C136929623DE700B4027C /* CommentRow.swift */,
-				0D2C136E29623DE700B4027C /* CommentsView.swift */,
-				0D2C136A29623DE700B4027C /* CommentViewModel.swift */,
-				0D2C136B29623DE700B4027C /* CommentViewService.swift */,
+				0D2C137529623F9300B4027C /* CommentList */,
 				0D2C136C29623DE700B4027C /* DetailCommentView.swift */,
 				0D3BF1B72787136D006B3C3E /* Assets.xcassets */,
 				0D3BF1B92787136D006B3C3E /* Preview Content */,
@@ -474,9 +506,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ApiCallSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 5MBBK5UCPD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -491,6 +525,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.ApiCallSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -502,9 +537,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ApiCallSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = 5MBBK5UCPD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -519,6 +556,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.ApiCallSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
